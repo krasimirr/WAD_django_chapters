@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Rango says..hello world!</h1>
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <!-- Following line changed to add an HTML hyperlink -->
+                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no categories present.</strong>
+       {% endif %}
+
+	   <br>
+	   <h2>Top 5 pages:</h2>
+	   <ul>
+			<li><a href="{{ pageURL0 }}">{{ pageTitle0 }}</a></li>
+			<li><a href="{{ pageURL1 }}">{{ pageTitle1 }}</a></li>
+			<li><a href="{{ pageURL2 }}">{{ pageTitle2 }}</a></li>
+			<li><a href="{{ pageURL3 }}">{{ pageTitle3 }}</a></li>
+			<li><a href="{{ pageURL4 }}">{{ pageTitle4 }}</a></li>
+		</ul>
+	 
+    </body>
+</html>

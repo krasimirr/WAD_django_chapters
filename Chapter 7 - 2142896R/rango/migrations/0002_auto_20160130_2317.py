@@ -19,7 +19,13 @@ class Migration(migrations.Migration):
         ),
         migrations.AddField(
             model_name='category',
-            name='view',
+            name='slug',
+            field=models.SlugField(default=''),
+            preserve_default=False,
+        ),
+        migrations.AddField(
+            model_name='category',
+            name='views',
             field=models.IntegerField(default=0),
             preserve_default=True,
         ),
